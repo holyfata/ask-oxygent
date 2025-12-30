@@ -2,8 +2,8 @@
 
 <!-- automd:badges color=yellow -->
 
-[![npm version](https://img.shields.io/npm/v/packageName?color=yellow)](https://npmjs.com/package/packageName)
-[![npm downloads](https://img.shields.io/npm/dm/packageName?color=yellow)](https://npm.chart.dev/packageName)
+[![npm version](https://img.shields.io/npm/v/@betterhyq/ask-oxygent?color=yellow)](https://npmjs.com/package/@betterhyq/ask-oxygent)
+[![npm downloads](https://img.shields.io/npm/dm/@betterhyq/ask-oxygent?color=yellow)](https://npm.chart.dev/@betterhyq/ask-oxygent)
 
 <!-- /automd -->
 
