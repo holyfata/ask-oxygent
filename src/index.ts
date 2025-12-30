@@ -17,7 +17,7 @@ interface SSEResponse {
  * @returns 返回 answer 类型数据的 content 字段
  * @throws {Error} 当请求失败、响应体为空或未找到 answer 类型响应时抛出错误
  */
-export const fetchSSEAnswer = async (
+export const askOxygent = async (
   url: string,
   postData: Record<string, unknown>,
 ): Promise<string> => {

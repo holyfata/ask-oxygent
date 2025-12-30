@@ -1,6 +1,6 @@
 {
-  "name": "packageName",
-  "version": "0.0.0",
+  "name": "@betterhyq/ask-oxygent",
+  "version": "1.0.0",
   "description": "",
   "repository": "unjs/packageName",
   "license": "MIT",
