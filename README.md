@@ -28,7 +28,7 @@ Import:
 import {} from "pkg";
 ```
 
-**CDN** (Deno, Bun and Browsers)
+**CDN** (Deno and Browsers)
 
 ```js
 import {} from "https://esm.sh/pkg";

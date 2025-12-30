@@ -1,4 +1,4 @@
-import { fetchEventSource } from '@microsoft/fetch-event-source';
+import { fetchEventSource } from "@microsoft/fetch-event-source";
 
 /**
  * SSE 响应数据类型定义
@@ -26,15 +26,15 @@ export const fetchSSEAnswer = async (
     const controller = new AbortController();
 
     fetchEventSource(url, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(postData),
       signal: controller.signal,
       async onopen(response) {
         if (!response.ok) {
-          const statusText = response.statusText || '未知错误';
+          const statusText = response.statusText || "未知错误";
           reject(
             new Error(
               `请求失败：${response.status} ${statusText}。URL: ${url}`,
@@ -46,7 +46,7 @@ export const fetchSSEAnswer = async (
       onmessage(event) {
         try {
           const jsonData = JSON.parse(event.data) as SSEResponse;
-          if (jsonData.type === 'answer' && jsonData.content) {
+          if (jsonData.type === "answer" && jsonData.content) {
             foundAnswer = true;
             // 找到答案后立即中止连接
             controller.abort();
@@ -59,11 +59,7 @@ export const fetchSSEAnswer = async (
       onerror(error) {
         // 只有在未找到答案时才拒绝 Promise
         if (!foundAnswer) {
-          reject(
-            new Error(
-              `SSE 连接错误：${error.message || '未知错误'}`,
-            ),
-          );
+          reject(new Error(`SSE 连接错误：${error.message || "未知错误"}`));
         }
         // 如果已经找到答案，停止重试
         throw error;
@@ -71,14 +67,12 @@ export const fetchSSEAnswer = async (
       onclose() {
         // 连接关闭时，如果还未找到答案，则拒绝 Promise
         if (!foundAnswer) {
-          reject(
-            new Error('SSE 流已结束，但未找到 type=answer 的响应'),
-          );
+          reject(new Error("SSE 流已结束，但未找到 type=answer 的响应"));
         }
       },
     }).catch((error) => {
       // 忽略中止错误（当我们找到答案时主动中止）
-      if (!foundAnswer && error.name !== 'AbortError') {
+      if (!foundAnswer && error.name !== "AbortError") {
         reject(
           error instanceof Error
             ? error
