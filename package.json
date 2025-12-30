@@ -1,6 +1,6 @@
 {
   "name": "@betterhyq/ask-oxygent",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "repository": "unjs/packageName",
   "license": "MIT",
@@ -35,8 +35,5 @@
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   },
-  "packageManager": "pnpm@10.15.0",
-  "peerDependencies": {
-    "@microsoft/fetch-event-source": "2.0.1"
-  }
+  "packageManager": "pnpm@10.15.0"
 }
